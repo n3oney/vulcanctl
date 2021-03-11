@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "puppeteer": "^8.0.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.33",
+    "@types/yargs": "^16.0.0",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  },
+  "name": "vulcanctl",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "bin": {
+    "vulcanctl": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node .",
+    "dev": "ts-node-dev src/index.ts"
+  },
+  "keywords": [
+    "vulcan",
+    "school",
+    "puppeteer"
+  ],
+  "author": "n3oney",
+  "license": "MIT",
+  "description": "A CLI to get info from Vulcan using puppeteer"
+}
