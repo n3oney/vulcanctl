@@ -92,8 +92,6 @@ export async function getCurrentClass(yargs: yargs.Arguments<Options>) {
         success: boolean
     };
 
-    console.log(fetchResult.data.Headers);
-
     interface Class {
         name: string;
         lessonHour: number;
