@@ -57,7 +57,7 @@ export async function getCurrentClass(yargs: yargs.Arguments<Options>) {
 
     const fetchResult = await page.evaluate(async (url) => {
         const date = new Date();
-        date.setDate(date.getDate() + (0 - date.getDay()));
+        date.setDate(date.getDate() + (1 - date.getDay()));
 
         const year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date);
         const month = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(date);
@@ -91,6 +91,8 @@ export async function getCurrentClass(yargs: yargs.Arguments<Options>) {
         },
         success: boolean
     };
+
+    console.log(fetchResult.data.Headers);
 
     interface Class {
         name: string;
@@ -139,7 +141,8 @@ export async function getCurrentClass(yargs: yargs.Arguments<Options>) {
         }
     }
 
-    const currentDay = parsedData.days[new Date().getDay()];
+    const currentDay = parsedData.days[new Date().getDay() - 1];
+
     const currentDate = new Date().setFullYear(1970, 1, 1);
 
     let currentClass = 'None';
